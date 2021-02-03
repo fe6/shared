@@ -1,6 +1,11 @@
 {
   "name": "shared",
   "version": "1.0.0",
+  "scripts": {
+    "tsc": "tsc",
+    "lint": "eslint --ext .ts src/**",
+    "format": "prettier --write --parser typescript \"src/*.ts\""
+  },
   "main": "index.js",
   "repository": "git@github.com:iq9891/shared.git",
   "author": "李梦龙 <649076408@qq.com>",
@@ -10,13 +15,19 @@
   "license": "MIT",
   "husky": {
     "hooks": {
+      "pre-commit": "yarn lint && yarn format",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@fe6/norm": "^2.1.0",
+    "@typescript-eslint/parser": "^4.14.2",
+    "eslint": "^7.19.0",
     "husky": "^4.3.8",
-    "lint-staged": "^10.5.3"
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
   }
 }

@@ -4,4 +4,6 @@ export const isEmptyObject = (num: number) => {
   test1 += num;
 
   console.log(test1, 'test1');
+
+  return test1;
 };

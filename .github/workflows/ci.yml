@@ -78,17 +78,3 @@ jobs:
       run: yarn --frozen-lockfile
     - name: Build code
       run: yarn build
-
-  size:
-    runs-on: ubuntu-latest
-    env:
-      CI_JOB_NUMBER: 1
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v2
-
-      - uses: posva/size-check-action@v1.1.2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          build_script: size
-          files: dist/vue.global.js dist/vue.global.prod.js

@@ -3,7 +3,9 @@ export const isEmptyObject = (num: number) => {
 
   test1 += num;
 
-  console.log(test1, 'test1');
+  if (test1 < 1) {
+    return 0;
+  }
 
   return test1;
 };

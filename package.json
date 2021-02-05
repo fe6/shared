@@ -13,6 +13,7 @@
     "test": "jest",
     "codecov": "codecov ./coverage/clover.xml",
     "bc": "run-p lint test",
+    "build": "node script/build.js --release",
     "tsc": "tsc",
     "preinstall": "node ./script/check-yarn.js"
   },

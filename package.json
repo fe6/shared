@@ -14,6 +14,7 @@
     "codecov": "codecov ./coverage/clover.xml",
     "bc": "run-p lint test",
     "build": "node script/build.js --release",
+    "size": "node script/build.js p -f global",
     "tsc": "tsc",
     "preinstall": "node ./script/check-yarn.js"
   },

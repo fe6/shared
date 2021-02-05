@@ -82,3 +82,10 @@ jobs:
 
     - name: Build code
       run: yarn build
+
+    - name: Check size
+      uses: posva/size-check-action@v1.1.2
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        build_script: size
+        files: dist/shared.global.js dist/shared.global.prod.js

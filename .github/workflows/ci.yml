@@ -1,6 +1,10 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [dev, master]
+  pull_request:
+    branches: [dev, master]
 
 jobs:
   lint:
@@ -23,11 +27,16 @@ jobs:
         node-version: '13.x'
     - run: yarn
     - run: yarn test
-
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
+      id: coverage-codecov
+      uses: codecov/codecov-action@v1.0.5
       with:
+        name: test-action
         token: ${{ secrets.CODECOV_TOKEN }}
+        file: ./coverage/clover.xml
+        flags:  unittests
+        yml: ./codecov.yml
+        fail_ci_if_error: true
 
   build:
     runs-on: ubuntu-latest
@@ -38,7 +47,7 @@ jobs:
         node-version: '13.x'
     - name: Build code
     - run: yarn
-      run: yarn build
+    - run: yarn build
 
   size:
     runs-on: ubuntu-latest

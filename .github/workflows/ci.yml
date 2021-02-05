@@ -10,6 +10,7 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: '13.x'
+    - name: Test code lint
     - run: yarn
     - run: yarn lint
 
@@ -23,7 +24,7 @@ jobs:
     - run: yarn
     - run: yarn test
 
-    - name: Upload coverage to Codecov  
+    - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
@@ -35,8 +36,8 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: '13.x'
-
-    - name: Build
+    - name: Build code
+    - run: yarn
       run: yarn build
 
   size:

@@ -16,7 +16,7 @@
     "removeComments": false,
     "jsx": "preserve",
     "lib": ["esnext", "dom"],
-    "types": ["jest"],
+    "types": ["jest", "node"],
     "rootDir": ".",
     "forceConsistentCasingInFileNames": true
   }

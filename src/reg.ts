@@ -16,7 +16,7 @@ export const reOnlyEnOrNum = /^[0-9A-Za-z]+$/g;
 export const reOnlyCn = /^[\u4e00-\u9fa5]+$/g;
 // 正数
 export const rePlusNumber = /^\d+(\.\d+)?$/;
-//
+
 /**
  * 获取 字母横线( 或其他 )转驼峰的正则
  *

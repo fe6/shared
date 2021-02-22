@@ -1,9 +1,9 @@
+/** @format */
+
 import * as isFn from '../is';
-import { toArgs } from './utils';
+import { arrayProto, toArgs } from './utils';
 
 describe('is', () => {
-  const arrayProto = Array.prototype;
-
   test('objectToString', () => {
     expect(isFn.objectToString.call('value')).toBe('[object String]');
     expect(isFn.objectToString.call(123)).toBe('[object Number]');
@@ -25,7 +25,13 @@ describe('is', () => {
     expect(isFn.isNumber(new Map())).toBeFalsy();
     expect(isFn.isNumber(new WeakSet())).toBeFalsy();
     expect(isFn.isNumber(new Set())).toBeFalsy();
-    expect(isFn.isNumber(new Promise((a) => { a(1); }))).toBeFalsy();
+    expect(
+      isFn.isNumber(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeFalsy();
     expect(isFn.isNumber([1, 2, 3])).toBeFalsy();
     expect(isFn.isNumber(null)).toBeFalsy();
     expect(isFn.isNumber(undefined)).toBeFalsy();
@@ -47,7 +53,13 @@ describe('is', () => {
     expect(isFn.isString(new Map())).toBeFalsy();
     expect(isFn.isString(new WeakSet())).toBeFalsy();
     expect(isFn.isString(new Set())).toBeFalsy();
-    expect(isFn.isString(new Promise((a) => { a(1); }))).toBeFalsy();
+    expect(
+      isFn.isString(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeFalsy();
     expect(isFn.isString([1, 2, 3])).toBeFalsy();
     expect(isFn.isString(undefined)).toBeFalsy();
     expect(isFn.isString(null)).toBeFalsy();
@@ -72,7 +84,13 @@ describe('is', () => {
     expect(isFn.isSymbol(new Map())).toBeFalsy();
     expect(isFn.isSymbol(new WeakSet())).toBeFalsy();
     expect(isFn.isSymbol(new Set())).toBeFalsy();
-    expect(isFn.isSymbol(new Promise((a) => { a(1); }))).toBeFalsy();
+    expect(
+      isFn.isSymbol(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeFalsy();
     expect(isFn.isSymbol('value')).toBeFalsy();
     expect(isFn.isSymbol(undefined)).toBeFalsy();
     expect(isFn.isSymbol(null)).toBeFalsy();
@@ -97,7 +115,13 @@ describe('is', () => {
     expect(isFn.isBoolean(new Map())).toBeFalsy();
     expect(isFn.isBoolean(new WeakSet())).toBeFalsy();
     expect(isFn.isBoolean(new Set())).toBeFalsy();
-    expect(isFn.isBoolean(new Promise((a) => { a(1); }))).toBeFalsy();
+    expect(
+      isFn.isBoolean(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeFalsy();
     expect(isFn.isBoolean('value')).toBeFalsy();
     expect(isFn.isBoolean(undefined)).toBeFalsy();
     expect(isFn.isBoolean(null)).toBeFalsy();
@@ -123,7 +147,13 @@ describe('is', () => {
     expect(isFn.isFunction(new Map())).toBeFalsy();
     expect(isFn.isFunction(new WeakSet())).toBeFalsy();
     expect(isFn.isFunction(new Set())).toBeFalsy();
-    expect(isFn.isFunction(new Promise((a) => { a(1); }))).toBeFalsy();
+    expect(
+      isFn.isFunction(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeFalsy();
     expect(isFn.isFunction(true)).toBeFalsy();
     expect(isFn.isFunction(undefined)).toBeFalsy();
     expect(isFn.isFunction(null)).toBeFalsy();
@@ -147,7 +177,13 @@ describe('is', () => {
     expect(isFn.isUndefined(new Map())).toBeFalsy();
     expect(isFn.isUndefined(new WeakSet())).toBeFalsy();
     expect(isFn.isUndefined(new Set())).toBeFalsy();
-    expect(isFn.isUndefined(new Promise((a) => { a(1); }))).toBeFalsy();
+    expect(
+      isFn.isUndefined(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeFalsy();
     expect(isFn.isUndefined(true)).toBeFalsy();
     expect(isFn.isUndefined(null)).toBeFalsy();
     expect(isFn.isUndefined(Function)).toBeFalsy();
@@ -173,7 +209,13 @@ describe('is', () => {
     expect(isFn.isNull(new Map())).toBeFalsy();
     expect(isFn.isNull(new WeakSet())).toBeFalsy();
     expect(isFn.isNull(new Set())).toBeFalsy();
-    expect(isFn.isNull(new Promise((a) => { a(1); }))).toBeFalsy();
+    expect(
+      isFn.isNull(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeFalsy();
     expect(isFn.isNull(true)).toBeFalsy();
     expect(isFn.isNull(Function)).toBeFalsy();
     expect(isFn.isNull('value')).toBeFalsy();
@@ -198,7 +240,13 @@ describe('is', () => {
     expect(isFn.isArray(new Map())).toBeFalsy();
     expect(isFn.isArray(new WeakSet())).toBeFalsy();
     expect(isFn.isArray(new Set())).toBeFalsy();
-    expect(isFn.isArray(new Promise((a) => { a(1); }))).toBeFalsy();
+    expect(
+      isFn.isArray(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeFalsy();
     expect(isFn.isArray(null)).toBeFalsy();
     expect(isFn.isArray(true)).toBeFalsy();
     expect(isFn.isArray('value')).toBeFalsy();
@@ -224,7 +272,13 @@ describe('is', () => {
     expect(isFn.isPlainObject(new WeakSet())).toBeFalsy();
     expect(isFn.isPlainObject(new Set())).toBeFalsy();
     expect(isFn.isPlainObject([1, 2, 3])).toBeFalsy();
-    expect(isFn.isPlainObject(new Promise((a) => { a(1); }))).toBeFalsy();
+    expect(
+      isFn.isPlainObject(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeFalsy();
     expect(isFn.isPlainObject(null)).toBeFalsy();
     expect(isFn.isPlainObject(true)).toBeFalsy();
     expect(isFn.isPlainObject('value')).toBeFalsy();
@@ -241,7 +295,13 @@ describe('is', () => {
   });
 
   test('isPromise', () => {
-    expect(isFn.isPromise(new Promise((a) => { a(1); }))).toBeTruthy();
+    expect(
+      isFn.isPromise(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeTruthy();
 
     expect(isFn.isPromise(undefined)).toBeFalsy();
     expect(isFn.isPromise(new Date())).toBeFalsy();
@@ -272,7 +332,13 @@ describe('is', () => {
     expect(isFn.isSet(new Date())).toBeFalsy();
     expect(isFn.isSet(new Map())).toBeFalsy();
     expect(isFn.isSet(new WeakSet())).toBeFalsy();
-    expect(isFn.isSet(new Promise((a) => { a(1); }))).toBeFalsy();
+    expect(
+      isFn.isSet(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeFalsy();
     expect(isFn.isSet({ a: 1 })).toBeFalsy();
     expect(isFn.isSet([1, 2, 3])).toBeFalsy();
     expect(isFn.isSet(null)).toBeFalsy();
@@ -297,7 +363,13 @@ describe('is', () => {
     expect(isFn.isWeakSet(new Date())).toBeFalsy();
     expect(isFn.isWeakSet(new Map())).toBeFalsy();
     expect(isFn.isWeakSet(new Set())).toBeFalsy();
-    expect(isFn.isWeakSet(new Promise((a) => { a(1); }))).toBeFalsy();
+    expect(
+      isFn.isWeakSet(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeFalsy();
     expect(isFn.isWeakSet({ a: 1 })).toBeFalsy();
     expect(isFn.isWeakSet([1, 2, 3])).toBeFalsy();
     expect(isFn.isWeakSet(null)).toBeFalsy();
@@ -322,7 +394,13 @@ describe('is', () => {
     expect(isFn.isMap(new Date())).toBeFalsy();
     expect(isFn.isMap(new WeakSet())).toBeFalsy();
     expect(isFn.isMap(new Set())).toBeFalsy();
-    expect(isFn.isMap(new Promise((a) => { a(1); }))).toBeFalsy();
+    expect(
+      isFn.isMap(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeFalsy();
     expect(isFn.isMap({ a: 1 })).toBeFalsy();
     expect(isFn.isMap([1, 2, 3])).toBeFalsy();
     expect(isFn.isMap(null)).toBeFalsy();
@@ -348,7 +426,13 @@ describe('is', () => {
     expect(isFn.isDate(new Map())).toBeFalsy();
     expect(isFn.isDate(new WeakSet())).toBeFalsy();
     expect(isFn.isDate(new Set())).toBeFalsy();
-    expect(isFn.isDate(new Promise((a) => { a(1); }))).toBeFalsy();
+    expect(
+      isFn.isDate(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeFalsy();
     expect(isFn.isDate({ a: 1 })).toBeFalsy();
     expect(isFn.isDate([1, 2, 3])).toBeFalsy();
     expect(isFn.isDate(null)).toBeFalsy();
@@ -377,7 +461,13 @@ describe('is', () => {
     expect(isFn.isPrototype(new Map())).toBeFalsy();
     expect(isFn.isPrototype(new WeakSet())).toBeFalsy();
     expect(isFn.isPrototype(new Set())).toBeFalsy();
-    expect(isFn.isPrototype(new Promise((a) => { a(1); }))).toBeFalsy();
+    expect(
+      isFn.isPrototype(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeFalsy();
     expect(isFn.isPrototype([1, 2, 3])).toBeFalsy();
     expect(isFn.isPrototype(null)).toBeFalsy();
     expect(isFn.isPrototype(true)).toBeFalsy();
@@ -402,7 +492,13 @@ describe('is', () => {
     expect(isFn.isNaN(undefined)).toBeTruthy();
     expect(isFn.isNaN(NaN)).toBeTruthy();
     expect(isFn.isNaN(Object(NaN))).toBeTruthy();
-    expect(isFn.isNaN(new Promise((a) => { a(1); }))).toBeTruthy();
+    expect(
+      isFn.isNaN(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeTruthy();
     expect(isFn.isNaN([1, 2, 3])).toBeTruthy();
     expect(isFn.isNaN(new Error())).toBeTruthy();
     expect(isFn.isNaN(arrayProto.slice)).toBeTruthy();
@@ -427,7 +523,13 @@ describe('is', () => {
     expect(isFn.isEmpty(undefined)).toBeTruthy();
     expect(isFn.isEmpty(NaN)).toBeTruthy();
     expect(isFn.isEmpty(Object(NaN))).toBeTruthy();
-    expect(isFn.isEmpty(new Promise((a) => { a(1); }))).toBeTruthy();
+    expect(
+      isFn.isEmpty(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeTruthy();
     expect(isFn.isEmpty(new Error())).toBeTruthy();
     expect(isFn.isEmpty(arrayProto.slice)).toBeTruthy();
     expect(isFn.isEmpty(/x/)).toBeTruthy();

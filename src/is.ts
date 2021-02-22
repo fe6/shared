@@ -1,3 +1,5 @@
+/** @format */
+
 export const enum JS_TYPES {
   ARGUMENTS = 'Arguments',
   NUMBER = 'Number',
@@ -50,7 +52,8 @@ export const objectToString = Object.prototype.toString;
  * toTypeString(123)
  * // => [object Number]
  */
-export const toTypeString = (value: unknown): string => objectToString.call(value);
+export const toTypeString = (value: unknown): string =>
+  objectToString.call(value);
 
 /**
  * 获取类型简便方法
@@ -68,7 +71,8 @@ export const toTypeString = (value: unknown): string => objectToString.call(valu
  * like(123)
  * // => Number
  */
-export const like = (val: unknown = undefined): string => toTypeString(val).replace(/(\[object )(\w*)(\])/g, (a, p1, type) => type);
+export const like = (val: unknown = undefined): string =>
+  toTypeString(val).replace(/(\[object )(\w*)(\])/g, (a, p1, type) => type);
 
 /**
  * 是否是 Arguments
@@ -86,7 +90,8 @@ export const like = (val: unknown = undefined): string => toTypeString(val).repl
  * isArguments(123)
  * // => true
  */
-export const isArguments = (val: unknown = undefined): boolean => like(val) === JS_TYPES.ARGUMENTS;
+export const isArguments = (val: unknown = undefined): boolean =>
+  like(val) === JS_TYPES.ARGUMENTS;
 
 /**
  * 是否是数字
@@ -104,7 +109,8 @@ export const isArguments = (val: unknown = undefined): boolean => like(val) === 
  * isNumber(123)
  * // => true
  */
-export const isNumber = (val: unknown = undefined): boolean => like(val) === JS_TYPES.NUMBER;
+export const isNumber = (val: unknown = undefined): boolean =>
+  like(val) === JS_TYPES.NUMBER;
 
 /**
  * 是否是字符串
@@ -122,7 +128,8 @@ export const isNumber = (val: unknown = undefined): boolean => like(val) === JS_
  * isString(123)
  * // => false
  */
-export const isString = (val: unknown = undefined): boolean => like(val) === JS_TYPES.STRING;
+export const isString = (val: unknown = undefined): boolean =>
+  like(val) === JS_TYPES.STRING;
 
 /**
  * 是否是 symbol
@@ -140,7 +147,8 @@ export const isString = (val: unknown = undefined): boolean => like(val) === JS_
  * isSymbol(123)
  * // => false
  */
-export const isSymbol = (val: unknown = undefined): boolean => like(val) === JS_TYPES.SYMBOL;
+export const isSymbol = (val: unknown = undefined): boolean =>
+  like(val) === JS_TYPES.SYMBOL;
 
 /**
  * 是否是布尔值
@@ -158,7 +166,8 @@ export const isSymbol = (val: unknown = undefined): boolean => like(val) === JS_
  * isBoolean(123)
  * // => false
  */
-export const isBoolean = (val: unknown = undefined): boolean => like(val) === JS_TYPES.BOOLEAN;
+export const isBoolean = (val: unknown = undefined): boolean =>
+  like(val) === JS_TYPES.BOOLEAN;
 
 /**
  * 是否是函数
@@ -176,7 +185,8 @@ export const isBoolean = (val: unknown = undefined): boolean => like(val) === JS
  * isSymbol(123)
  * // => false
  */
-export const isFunction = (val: unknown = undefined): boolean => like(val) === JS_TYPES.FUNCTION;
+export const isFunction = (val: unknown = undefined): boolean =>
+  like(val) === JS_TYPES.FUNCTION;
 
 /**
  * 是否是 undefined
@@ -194,7 +204,8 @@ export const isFunction = (val: unknown = undefined): boolean => like(val) === J
  * isUndefined(123)
  * // => false
  */
-export const isUndefined = (val: unknown = undefined): boolean => like(val) === JS_TYPES.UNDEFINED;
+export const isUndefined = (val: unknown = undefined): boolean =>
+  like(val) === JS_TYPES.UNDEFINED;
 
 /**
  * 是否是 null
@@ -212,7 +223,8 @@ export const isUndefined = (val: unknown = undefined): boolean => like(val) === 
  * isNull(void 0)
  * // => false
  */
-export const isNull = (val: unknown = undefined): boolean => like(val) === JS_TYPES.NULL;
+export const isNull = (val: unknown = undefined): boolean =>
+  like(val) === JS_TYPES.NULL;
 
 /**
  * 是否是数组
@@ -230,7 +242,8 @@ export const isNull = (val: unknown = undefined): boolean => like(val) === JS_TY
  * isArray(123)
  * // => false
  */
-export const isArray = (val: unknown = undefined): boolean => like(val) === JS_TYPES.ARRAY;
+export const isArray = (val: unknown = undefined): boolean =>
+  like(val) === JS_TYPES.ARRAY;
 
 /**
  * 是否是普通对象
@@ -248,7 +261,8 @@ export const isArray = (val: unknown = undefined): boolean => like(val) === JS_T
  * isPlainObject(123)
  * // => false
  */
-export const isPlainObject = (val: unknown = undefined): boolean => like(val) === JS_TYPES.OBJECT;
+export const isPlainObject = (val: unknown = undefined): boolean =>
+  like(val) === JS_TYPES.OBJECT;
 
 /**
  * 是否是 promise
@@ -266,7 +280,8 @@ export const isPlainObject = (val: unknown = undefined): boolean => like(val) ==
  * isPromise(123)
  * // => false
  */
-export const isPromise = (val: unknown = undefined): boolean => like(val) === JS_TYPES.PROMISE;
+export const isPromise = (val: unknown = undefined): boolean =>
+  like(val) === JS_TYPES.PROMISE;
 
 /**
  * 是否是 Set 对象
@@ -284,7 +299,8 @@ export const isPromise = (val: unknown = undefined): boolean => like(val) === JS
  * isSet(123)
  * // => false
  */
-export const isSet = (val: unknown = undefined): boolean => like(val) === JS_TYPES.SET;
+export const isSet = (val: unknown = undefined): boolean =>
+  like(val) === JS_TYPES.SET;
 
 /**
  * 是否是 WeakSet 对象
@@ -302,7 +318,8 @@ export const isSet = (val: unknown = undefined): boolean => like(val) === JS_TYP
  * isWeakSet(123)
  * // => false
  */
-export const isWeakSet = (val: unknown = undefined): boolean => like(val) === JS_TYPES.WEAKSET;
+export const isWeakSet = (val: unknown = undefined): boolean =>
+  like(val) === JS_TYPES.WEAKSET;
 
 /**
  * 是否是 Map 对象
@@ -320,7 +337,8 @@ export const isWeakSet = (val: unknown = undefined): boolean => like(val) === JS
  * isMap(123)
  * // => false
  */
-export const isMap = (val: unknown = undefined): boolean => like(val) === JS_TYPES.MAP;
+export const isMap = (val: unknown = undefined): boolean =>
+  like(val) === JS_TYPES.MAP;
 
 /**
  * 是否是 Date 对象
@@ -338,7 +356,8 @@ export const isMap = (val: unknown = undefined): boolean => like(val) === JS_TYP
  * isDate(123)
  * // => false
  */
-export const isDate = (val: unknown = undefined): boolean => like(val) === JS_TYPES.DATE;
+export const isDate = (val: unknown = undefined): boolean =>
+  like(val) === JS_TYPES.DATE;
 
 /**
  * 检查 'val' 是否可能是原型对象。

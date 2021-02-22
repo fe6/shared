@@ -1,3 +1,5 @@
+/** @format */
+
 import { isUndefined } from './is';
 
 export const enum SIZE_UNIT {
@@ -17,10 +19,10 @@ export const enum SIZE_UNIT {
  * @returns {function} 返回带单位的大小
  * @example
  *
- * fileSizeFormat(1111)
+ * fileSize(1111)
  * // => {"size": 1.08, "unit": "KB"}
  *
- * fileSizeFormat(0)
+ * fileSize(0)
  * // => {size: 0, unit: 'bytes'}
  */
 export const fileSize = (num?: number) => {

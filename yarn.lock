@@ -1120,10 +1120,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fe6/norm@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.npm.taobao.org/@fe6/norm/download/@fe6/norm-3.0.1.tgz#f96197915f6f992ce836d31d2c940fb208c2f8c2"
-  integrity sha1-+WGXkV9vmSzoNtMdLJQPsgjC+MI=
+"@fe6/norm@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.npmjs.org/@fe6/norm/-/norm-3.0.4.tgz#c5baa96befb3e40fdc7498db2a838d1d8562d950"
+  integrity sha512-XBNPRg/lvhI1/rf7MJv9ZD/d39WTQjtYWz25GA/Gs93JWYbNUkLNGH5Gf+KoueH1OOHdYlna6zT8zDjJivekTQ==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.14.2"
     "@typescript-eslint/parser" "^4.14.2"

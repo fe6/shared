@@ -7,3 +7,4 @@ export * from './is';
 export * from './number';
 export * from './o';
 export * from './reg';
+export * from './uuid';

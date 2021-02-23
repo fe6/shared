@@ -1,4 +1,4 @@
-import * as deviceFn from '../device';
+import * as deviceFn from '../src/device';
 
 describe('device', () => {
   test('isClient', () => {

@@ -1,4 +1,4 @@
-import * as numberFn from '../number';
+import * as numberFn from '../src/number';
 import { falsey, others } from './utils';
 
 describe('number', () => {

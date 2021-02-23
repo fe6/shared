@@ -1,4 +1,4 @@
-import * as oFn from '../o';
+import * as oFn from '../src/o';
 
 interface ObjEntity {
   name: string;

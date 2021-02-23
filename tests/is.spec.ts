@@ -1,4 +1,4 @@
-import * as isFn from '../is';
+import * as isFn from '../src/is';
 import { arrayProto, toArgs } from './utils';
 
 describe('is', () => {

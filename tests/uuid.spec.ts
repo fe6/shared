@@ -1,4 +1,4 @@
-import * as uuidFn from '../uuid';
+import * as uuidFn from '../src/uuid';
 
 describe('uuid', () => {
   test('uuid', () => {

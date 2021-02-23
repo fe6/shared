@@ -19,5 +19,9 @@
     "types": ["jest", "node"],
     "rootDir": ".",
     "forceConsistentCasingInFileNames": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "tests/*.ts",
+  ]
 }

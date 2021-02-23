@@ -1,4 +1,4 @@
-import * as regFn from '../reg';
+import * as regFn from '../src/reg';
 
 describe('reg', () => {
   test('reCamelize', () => {

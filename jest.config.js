@@ -14,7 +14,7 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.ts',
     '!src/index.ts',
-    '!src/__tests__/*.ts'
+    '!tests/*.ts'
   ],
   watchPathIgnorePatterns: ['/node_modules/', '/dist/', '/.git/'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
@@ -22,7 +22,7 @@ module.exports = {
     waterShared: '<rootDir>/src'
   },
   rootDir: __dirname,
-  testMatch: ['<rootDir>/src/__tests__/*.spec.ts'],
+  testMatch: ['<rootDir>/tests/*.spec.ts'],
   testPathIgnorePatterns: process.env.SKIP_E2E
     ? // ignore example tests on netlify builds since they don't contribute
       // to coverage and can cause netlify builds to fail

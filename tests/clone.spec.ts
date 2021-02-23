@@ -1,4 +1,4 @@
-import * as cloneFn from '../clone';
+import * as cloneFn from '../src/clone';
 import { others } from './utils';
 
 describe('clone', () => {

@@ -1,4 +1,4 @@
-import * as formatFn from '../format';
+import * as formatFn from '../src/format';
 import { others } from './utils';
 
 describe('format', () => {

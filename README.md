@@ -1,26 +1,22 @@
 ## Shared
 > 水滴共享函数集
 
-[![@fe6/shared][npm-image]][npm-url] [![CI status][github-action-image]][github-action-url] [![Codecov 单元测试覆盖][codecov-image]][codecov-url] [![david deps][david-image]][david-url] [![david devDeps][david-dev-image]][david-dev-url] [![NPM downloads][downloads-image]][downloads-url] [![GitHub code size in bytes][size-image]][size-url] ![gzip][gzip-image] [![GitHub][mit-image]][mit-url] ![GitHub language count][lang-image] ![code style: prettier][prettier-image]
+[![@fe6/shared][npm-image]][npm-url] [![CI status][github-action-image]][github-action-url] [![Codecov 单元测试覆盖][codecov-image]][codecov-url]  [![NPM downloads][downloads-image]][downloads-url] [![GitHub code size in bytes][size-image]][size-url] ![gzip][gzip-image] [![GitHub][mit-image]][mit-url] ![GitHub language count][lang-image] ![code style: prettier][prettier-image]
 
 [github-action-image]: https://github.com/fe6/shared/workflows/CI/badge.svg
 [github-action-url]: https://github.com/fe6/shared/actions?query=workflow%3ACI
-[david-image]: https://img.shields.io/david/fe6/shared
-[david-dev-url]: https://david-dm.org/fe6/shared?type=dev
-[david-dev-image]: https://img.shields.io/david/dev/fe6/shared
-[david-url]: https://david-dm.org/fe6/shared
 [npm-image]: https://img.shields.io/npm/v/@fe6/shared.svg
 [npm-url]: https://www.npmjs.org/package/@fe6/shared
 [downloads-image]: http://img.shields.io/npm/dm/@fe6/shared.svg
 [downloads-url]: https://npmjs.org/package/@fe6/shared
-[size-image]: https://img.shields.io/github/languages/code-size/fe6/shared.svg
+[size-image]: https://img.badgesize.io/https://unpkg.com/@fe6/shared/dist/shared.global.prod.js?label=shared.min.js&compression=gzip
 [size-url]: https://unpkg.com/@fe6/shared
 [mit-image]: https://img.shields.io/github/license/fe6/shared
 [mit-url]: https://github.com/fe6/shared/blob/master/LICENSE
 [codecov-image]: https://img.shields.io/codecov/c/github/fe6/shared/master.svg
 [codecov-url]: https://codecov.io/gh/fe6/shared/branch/master
 [lang-image]: https://img.shields.io/github/languages/count/fe6/shared.svg
-[gzip-image]: http://img.badgesize.io/https://unpkg.com/@fe6/shared.global.prod.js?compression=gzip
+[gzip-image]: https://img.badgesize.io/https:/unpkg.com/@fe6/shared?compression=gzip
 [prettier-image]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg
 
 

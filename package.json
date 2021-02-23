@@ -22,7 +22,7 @@
   },
   "main": "index.js",
   "module": "dist/shared.esm-bundler.js",
-  "types": "dist/shared.d.ts",
+  "types": "types/index.d.ts",
   "unpkg": "dist/shared.global.js",
   "jsdelivr": "dist/shared.global.js",
   "author": "李梦龙 <649076408@qq.com>",

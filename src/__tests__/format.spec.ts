@@ -1,5 +1,3 @@
-/** @format */
-
 import * as formatFn from '../format';
 import { others } from './utils';
 

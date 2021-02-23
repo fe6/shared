@@ -9,7 +9,7 @@
     "open": "open http://localhost:5000/demo",
     "docs:dev": "vuepress dev docs",
     "lint:eslint": "eslint --fix --ext .ts src/**",
-    "lint:format": "prettier --require-pragma false --insert-pragma false --write --parser typescript \"src/*.ts\"",
+    "lint:format": "prettier --write --parser typescript \"src/*.ts\"",
     "lint": "run-p lint:*",
     "test": "jest",
     "codecov": "codecov ./coverage/clover.xml",

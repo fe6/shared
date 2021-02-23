@@ -1,5 +1,3 @@
-/** @format */
-
 import { isNumber, isString, isUndefined } from './is';
 import {
   rePhone344,

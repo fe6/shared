@@ -1,5 +1,3 @@
-/** @format */
-
 import * as oFn from '../o';
 
 interface ObjEntity {

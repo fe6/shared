@@ -1,5 +1,3 @@
-/** @format */
-
 import * as numberFn from '../number';
 import { falsey, others } from './utils';
 

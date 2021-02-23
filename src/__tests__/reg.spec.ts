@@ -1,5 +1,3 @@
-/** @format */
-
 import * as regFn from '../reg';
 
 describe('reg', () => {

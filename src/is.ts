@@ -1,5 +1,3 @@
-/** @format */
-
 export const enum JS_TYPES {
   ARGUMENTS = 'Arguments',
   NUMBER = 'Number',

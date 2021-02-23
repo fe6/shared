@@ -50,6 +50,10 @@ var shared = require('@fe6/shared');
 - 规避了代码冗余
 - 便于统一维护
 
+## CHANGELOG
+
+[更改日志](./CHANGELOG.md).
+
 ## License
 
 Shared is licensed under a [MIT License](./LICENSE).

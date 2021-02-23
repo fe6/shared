@@ -1,5 +1,3 @@
-/** @format */
-
 import * as isFn from '../is';
 import { arrayProto, toArgs } from './utils';
 

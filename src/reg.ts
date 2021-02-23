@@ -1,5 +1,3 @@
-/** @format */
-
 import { isString } from './is';
 
 // 按344位数切割手机号，用于手机脱敏等

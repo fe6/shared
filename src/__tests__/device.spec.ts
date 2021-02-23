@@ -1,5 +1,3 @@
-/** @format */
-
 import * as deviceFn from '../device';
 
 describe('device', () => {

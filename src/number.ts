@@ -1,5 +1,3 @@
-/** @format */
-
 import { isNaN, isNumber, isSymbol, isUndefined } from './is';
 
 /**

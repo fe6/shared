@@ -1,5 +1,3 @@
-/** @format */
-
 import { isPlainObject } from './is';
 
 const { hasOwnProperty } = Object.prototype;

@@ -1,4 +1,5 @@
 import * as oFn from '../src/o';
+import { others } from './utils';
 
 interface ObjEntity {
   name: string;
@@ -14,5 +15,9 @@ describe('o', () => {
     expect(oFn.hasOwn(1, '')).toBeFalsy();
     expect(oFn.hasOwn(1)).toBeFalsy();
     expect(oFn.hasOwn(obj, 'age')).toBeFalsy();
+
+    others.forEach((oItem) => {
+      expect(oFn.hasOwn(oItem)).toBeFalsy();
+    });
   });
 });

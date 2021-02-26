@@ -1,3 +1,16 @@
+# [0.3.0](https://github.com/fe6/shared/compare/v0.2.0...v0.3.0) (2021-02-26)
+
+
+
+# [0.2.0](https://github.com/fe6/shared/compare/v0.1.3...v0.2.0) (2021-02-26)
+
+
+### Features
+
+* **$format:** add objectToQuery method ([290bbfd](https://github.com/fe6/shared/commit/290bbfd598ed14a96d1645e9ee2f4a0e68c4f07f))
+
+
+
 ## [0.1.3](https://github.com/fe6/shared/compare/v0.1.2...v0.1.3) (2021-02-26)
 
 

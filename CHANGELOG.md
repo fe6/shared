@@ -1,9 +1,14 @@
-## [0.1.2](https://github.com/fe6/shared/compare/v0.1.1...v0.1.2) (2021-02-26)
+## [0.1.3](https://github.com/fe6/shared/compare/v0.1.2...v0.1.3) (2021-02-26)
 
 
 ### Bug Fixes
 
 * **$types:** modify the types entry file ([d8ca478](https://github.com/fe6/shared/commit/d8ca478559a4b33cf4cb0b1af2c82a9f028b8128))
+* **$typscript:** modify the generation rules of type files ([dc619f8](https://github.com/fe6/shared/commit/dc619f88a1f784357f04dda8737048b08eecc06d))
+
+
+
+## [0.1.2](https://github.com/fe6/shared/compare/v0.1.1...v0.1.2) (2021-02-23)
 
 
 

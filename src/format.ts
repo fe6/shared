@@ -1,4 +1,5 @@
-import { isNumber, isString, isUndefined } from './is';
+import { isNumber, isString, isUndefined, isPlainObject } from './is';
+import { keys } from './o';
 import {
   rePhone344,
   rePhone,
@@ -280,4 +281,41 @@ export const firstCapitalize = (word: unknown = ''): string => {
   }
 
   return firstWord.toUpperCase() + newWord.slice(1);
+};
+
+/**
+ * 对象转化为get请求的链接参数
+ *
+ *
+ * @since 0.2.0
+ * @category Object
+ * @param {*} item 目标对象
+ * @param {string} [baseUrl] 基本链接
+ * @returns {string} 格式化好的字符串
+ * @example
+ *
+ * objectToQuery({ name: 'www.baidu.com' }, 'www.water.com')
+ * // => www.baidu.com?name=lee
+ *
+ * objectToQuery({a: '3', b: '4'})
+ * // => a=3&b=4
+ */
+export const objectToQuery = (item: unknown, baseUrl?: string): string => {
+  let parameters = '';
+
+  if (isPlainObject(item)) {
+    const plainObj = item as any;
+    parameters = keys(plainObj).reduce((acc: string, attr: string) => {
+      return `${attr}=${encodeURIComponent(plainObj[attr])}&${acc}`;
+    }, '');
+  }
+  parameters = parameters.replace(/&$/, '');
+
+  if (isString(baseUrl)) {
+    const baseUrlStr = baseUrl as string;
+    return /\?$/.test(baseUrlStr)
+      ? baseUrlStr + parameters
+      : baseUrlStr.replace(/\/?$/, '?') + parameters;
+  }
+  return parameters;
 };

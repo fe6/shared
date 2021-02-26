@@ -1,5 +1,11 @@
 import * as formatFn from '../src/format';
+import { isPlainObject } from '../src/is';
 import { others } from './utils';
+
+interface ObjEntity {
+  name: string;
+  age: number;
+}
 
 describe('format', () => {
   test('fileSize', () => {
@@ -94,5 +100,20 @@ describe('format', () => {
       .forEach((oItem, ass) => {
         expect(formatFn.firstCapitalize(oItem)).toBe('');
       });
+  });
+
+  test('objectToQuery', () => {
+    const obj: ObjEntity = {
+      name: 'lee',
+      age: 17,
+    };
+
+    expect(formatFn.objectToQuery(obj, 'www.baidu.com')).toBe('www.baidu.com?age=17&name=lee');
+    expect(formatFn.objectToQuery(obj, 'www.baidu.com?')).toBe('www.baidu.com?age=17&name=lee');
+    expect(formatFn.objectToQuery(obj)).toBe('age=17&name=lee');
+
+    others.filter(item=> !isPlainObject(item)).forEach((oItem) => {
+      expect(formatFn.objectToQuery(oItem)).toBe('');
+    });
   });
 });

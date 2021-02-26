@@ -18,6 +18,10 @@ const fs = require('fs-extra')
 const path = require('path')
 const chalk = require('chalk')
 const execa = require('execa')
+const {
+Extractor,
+ExtractorConfig,
+} = require('@microsoft/api-extractor')
 const { gzipSync } = require('zlib')
 const { compress } = require('brotli')
 
@@ -33,7 +37,6 @@ build()
 async function build() {
   const pkgDir = path.resolve(`.`)
   const pkg = require(`${pkgDir}/package.json`)
-  const name = pkg.name;
 
   // if building a specific format, do not remove dist.
   if (!formats) {
@@ -62,29 +65,31 @@ async function build() {
   )
 
   if (buildTypes && pkg.types) {
-    console.log()
-    const typesDir = path.resolve(pkgDir, 'types')
-    if (await fs.exists(typesDir)) {
-      await fs.remove(typesDir);
-    }
-    const dtsPath = path.resolve(pkgDir, 'dist/src')
-    const destPath = path.resolve(pkgDir, 'types');
-    console.log(
-      chalk.bold(chalk.yellow(`Rolling up type definitions for ${name}...`))
-    )
-    fs.rename(dtsPath, destPath, (err) => {
-      if (err) throw err;
-      fs.stat(destPath, (err, stats) => {
-        if (err) throw err;
-        console.log()
-        console.log(
-          chalk.bold(chalk.green(`Types generated successfully`))
-        )
-        console.log()
-        checkFileSize(`${pkgDir}/dist/${name}.global.prod.js`)
-        console.log()
-      });
+    const apiExtractorJsonPath = path.resolve(pkgDir, 'api-extractor.json')
+    // https://api-extractor.com/pages/setup/configure_api_report/
+    const extractorConfig = ExtractorConfig.loadFileAndPrepare(apiExtractorJsonPath);
+
+    const extractorResult = Extractor.invoke(extractorConfig, {
+      localBuild: true,
+      showVerboseMessages: true
     });
+
+    if (extractorResult.succeeded) {
+      console.log()
+      const typesDir = path.resolve(pkgDir, 'dist/src')
+      if (await fs.exists(typesDir)) {
+        await fs.remove(typesDir);
+      }
+      console.log(`API Extractor completed successfully`);
+      console.log()
+      checkFileSize(path.resolve(pkgDir, 'dist/shared.global.prod.js'))
+      console.log()
+      process.exitCode = 0;
+    } else {
+      console.error(`API Extractor completed with ${extractorResult.errorCount} errors`
+        + ` and ${extractorResult.warningCount} warnings`);
+      process.exitCode = 1;
+    }
   }
 }
 
@@ -98,8 +103,9 @@ function checkFileSize(filePath) {
   const gzippedSize = (gzipped.length / 1024).toFixed(2) + 'kb'
   const compressed = compress(file)
   const compressedSize = (compressed.length / 1024).toFixed(2) + 'kb'
+  console.log(`Shared size`);
   console.log(
-    `${chalk.gray(
+    `${chalk.blue(
       chalk.bold(path.basename(filePath))
     )} min:${minSize} / gzip:${gzippedSize} / brotli:${compressedSize}`
   )

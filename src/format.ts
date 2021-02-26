@@ -287,7 +287,7 @@ export const firstCapitalize = (word: unknown = ''): string => {
  * 对象转化为get请求的链接参数
  *
  *
- * @since 0.2.0
+ * @since 0.3.0
  * @category Object
  * @param {*} item 目标对象
  * @param {string} [baseUrl] 基本链接

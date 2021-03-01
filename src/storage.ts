@@ -112,7 +112,7 @@ export const createStorage = ({
      * get('prefixKey'， 123)
      *
      */
-    get(key: string, def: any = ''): unknown {
+    get(key: string, def: any = '') {
       const item = this.storage.getItem(this.getKey(key));
       if (item) {
         const decItem = item;

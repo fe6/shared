@@ -1,7 +1,7 @@
 {
   "name": "@fe6/shared",
   "description": "水滴共享函数集",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "scripts": {
     "start": "npm-run-all --parallel \"dev\" serve open",
     "dev": "node script/dev.js",
@@ -15,6 +15,7 @@
     "codecov": "codecov ./coverage/clover.xml",
     "bc": "run-p lint test",
     "build": "node script/build.js --release",
+    "prepublishOnly": "yarn build",
     "site": "vuepress build docs",
     "size": "node script/build.js p -f global",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",

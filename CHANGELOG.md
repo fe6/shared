@@ -1,4 +1,9 @@
-# [0.4.0](https://github.com/fe6/shared/compare/v0.3.0...v0.4.0) (2021-03-01)
+## [0.4.1](https://github.com/fe6/shared/compare/v0.4.0...v0.4.1) (2021-03-01)
+
+
+### Bug Fixes
+
+* **$storage:** modify get return type ([82bdb72](https://github.com/fe6/shared/commit/82bdb722547b06d78c8719b57c16151aaf73be5f))
 
 
 ### Features
@@ -7,7 +12,20 @@
 
 
 
-# [0.3.0](https://github.com/fe6/shared/compare/v0.1.3...v0.3.0) (2021-02-26)
+# [0.4.0](https://github.com/fe6/shared/compare/v0.3.0...v0.4.0) (2021-03-01)
+
+
+### Features
+
+* **$storage:** add storage methods ([eef84c4](https://github.com/fe6/shared/commit/eef84c49ab5720f171e6e8b6c5c4714263147f2c))
+
+
+
+# [0.3.0](https://github.com/fe6/shared/compare/v0.2.0...v0.3.0) (2021-02-26)
+
+
+
+# [0.2.0](https://github.com/fe6/shared/compare/v0.1.3...v0.2.0) (2021-02-26)
 
 
 ### Features

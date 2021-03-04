@@ -1,3 +1,5 @@
+import { reUrl } from './reg';
+
 export const enum JS_TYPES {
   ARGUMENTS = 'Arguments',
   NUMBER = 'Number',
@@ -466,3 +468,46 @@ export const isEmpty = (val: unknown = undefined): boolean => {
 
   return true;
 };
+
+/**
+ * 是否是地址
+ *
+ *
+ *
+ * @since 0.5.0
+ * @category Lang
+ * @param {*} val 要检查的值。
+ * @returns {boolean} 如果是返回 true ，否则返回 false
+ * @example
+ *
+ * isUrl('http://www.water.com');
+ * // => true
+ *
+ * isUrl('https://www.water.com');
+ * // => true
+ *
+ * isUrl('https://www.water.com?good=true');
+ * // => true
+ *
+ * isUrl(null);
+ * // => false
+ *
+ * isUrl(false);
+ * // => false
+ *
+ * isUrl(1);
+ * // => false
+ *
+ * isUrl([1, 2, 3]);
+ * // => false
+ *
+ * isUrl({ 'a': 1 });
+ * // => false
+ */
+export function isUrl(path: unknown): boolean {
+  if (!isString(path)) {
+    return false;
+  }
+  const pathString = path as string;
+  return reUrl.test(pathString);
+}

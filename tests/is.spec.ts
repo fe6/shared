@@ -552,4 +552,37 @@ describe('is', () => {
     Foo.prototype = { constructor: Foo };
     expect(isFn.isEmpty(Foo.prototype)).toBeFalsy();
   });
+
+  test('isUrl', () => {
+    expect(isFn.isUrl('http://www.water.com')).toBeTruthy();
+    expect(isFn.isUrl('https://www.water.com')).toBeTruthy();
+    expect(isFn.isUrl('https://www.water.com?good=true')).toBeTruthy();
+
+    expect(isFn.isUrl(new Date())).toBeFalsy();
+    expect(isFn.isUrl(undefined)).toBeFalsy();
+    expect(isFn.isUrl(new Map())).toBeFalsy();
+    expect(isFn.isUrl(new WeakSet())).toBeFalsy();
+    expect(isFn.isUrl(new Set())).toBeFalsy();
+    expect(
+      isFn.isUrl(
+        new Promise((a) => {
+          a(1);
+        }),
+      ),
+    ).toBeFalsy();
+    expect(isFn.isUrl({ a: 1 })).toBeFalsy();
+    expect(isFn.isUrl([1, 2, 3])).toBeFalsy();
+    expect(isFn.isUrl(null)).toBeFalsy();
+    expect(isFn.isUrl(true)).toBeFalsy();
+    expect(isFn.isUrl('value')).toBeFalsy();
+    expect(isFn.isUrl(Function)).toBeFalsy();
+    expect(isFn.isUrl(NaN)).toBeFalsy();
+    expect(isFn.isUrl(Object(NaN))).toBeFalsy();
+    expect(isFn.isUrl(Object(1))).toBeFalsy();
+    expect(isFn.isUrl(new Error())).toBeFalsy();
+    expect(isFn.isUrl(arrayProto.slice)).toBeFalsy();
+    expect(isFn.isUrl(/x/)).toBeFalsy();
+    expect(isFn.isUrl(123)).toBeFalsy();
+    expect(isFn.isUrl(Symbol ? Symbol('a') : undefined)).toBeFalsy();
+  });
 });

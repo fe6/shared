@@ -1,4 +1,4 @@
-import { isString } from './is';
+/* eslint-disable no-useless-escape */
 
 // 按344位数切割手机号，用于手机脱敏等
 export const rePhone344 = /(\d{3})\d{4}(\d{4})/g;
@@ -14,6 +14,9 @@ export const reOnlyEnOrNum = /^[0-9A-Za-z]+$/g;
 export const reOnlyCn = /^[\u4e00-\u9fa5]+$/g;
 // 正数
 export const rePlusNumber = /^\d+(\.\d+)?$/;
+// 地址 的正则
+// v 0.5.0 新增
+export const reUrl = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/;
 
 /**
  * 获取 字母横线( 或其他 )转驼峰的正则
@@ -34,7 +37,7 @@ export const rePlusNumber = /^\d+(\.\d+)?$/;
  */
 export const reCamelize = (separator: unknown = '-') => {
   const newSeparator =
-    !isString(separator) || separator === '+' || separator === '*'
+    typeof separator !== 'string' || separator === '+' || separator === '*'
       ? '-'
       : separator;
   return new RegExp(`${newSeparator}(\\w)`, 'g');

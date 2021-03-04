@@ -1,7 +1,7 @@
 {
   "name": "@fe6/shared",
   "description": "水滴共享函数集",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "scripts": {
     "start": "npm-run-all --parallel \"dev\" serve open",
     "dev": "node script/dev.js",

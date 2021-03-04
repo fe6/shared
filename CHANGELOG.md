@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/fe6/shared/compare/v0.4.1...v0.5.0) (2021-03-04)
+
+
+### Features
+
+* **$is:** add is url method ([b93ff16](https://github.com/fe6/shared/commit/b93ff16bcd7970a8eb3fdebd054aa73b6c54ad14))
+
+
+
 ## [0.4.1](https://github.com/fe6/shared/compare/v0.4.0...v0.4.1) (2021-03-01)
 
 
@@ -21,11 +30,7 @@
 
 
 
-# [0.3.0](https://github.com/fe6/shared/compare/v0.2.0...v0.3.0) (2021-02-26)
-
-
-
-# [0.2.0](https://github.com/fe6/shared/compare/v0.1.3...v0.2.0) (2021-02-26)
+# [0.3.0](https://github.com/fe6/shared/compare/v0.1.3...v0.3.0) (2021-02-26)
 
 
 ### Features

@@ -42,6 +42,12 @@ npm i @fe6/shared
 var shared = require('@fe6/shared');
 ```
 
+## CDN 使用
+
+- [esm.run](https://esm.run/@fe6/shared)
+- [unpkg](https://unpkg.com/@fe6/shared)
+- [jsdelivr](https://cdn.jsdelivr.net/npm/@fe6/shared)
+
 ## 为什么会有 Shared ?
 
 由于 Water 的不断壮大，由于项目的不断增多。众多重复的代码出现在不同的仓库中，为了规避这样的现象。

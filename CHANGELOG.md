@@ -1,3 +1,12 @@
+# [0.7.0](https://github.com/fe6/shared/compare/v0.6.0...v0.7.0) (2021-03-11)
+
+
+### Features
+
+* **$o:** add deepMerge method ([9f7469b](https://github.com/fe6/shared/commit/9f7469bce715b4dc18e07150d46169c95a6ae68d))
+
+
+
 # [0.6.0](https://github.com/fe6/shared/compare/v0.5.0...v0.6.0) (2021-03-04)
 
 

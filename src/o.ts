@@ -1,4 +1,4 @@
-import { isPlainObject } from './is';
+import { isArray, isPlainObject } from './is';
 
 const { hasOwnProperty } = Object.prototype;
 
@@ -28,3 +28,34 @@ export const hasOwn = (item: unknown, attr?: string) => {
 };
 
 export const { keys } = Object;
+
+/**
+ * 深度合并
+ *
+ *
+ * @since 0.7.0
+ * @category Object
+ * @param {*} src 元对象
+ * @param {*} target 目标对象
+ * @returns {T} 返回新对象
+ * @example
+ *
+ * deepMerge({ name: 'lee' }, { name: 'foo' })
+ * // => { name: 'foo' }
+ */
+export function deepMerge<T = any>(src: any = {}, target: any = {}): T {
+  if (!isPlainObject(src) || !isPlainObject(target)) {
+    return {} as T;
+  }
+  const newObj = { ...target };
+  keys(src).forEach((attr) => {
+    if (isPlainObject(src[attr])) {
+      newObj[attr] = deepMerge(src[attr], target[attr]);
+    } else if (isArray(target[attr])) {
+      newObj[attr] = target[attr].slice();
+    } else {
+      newObj[attr] = target[attr];
+    }
+  });
+  return newObj;
+}

@@ -10,3 +10,4 @@ export * from './reg';
 export * from './storage';
 export * from './uuid';
 export * from './search-url';
+export * from './string';

@@ -14,6 +14,8 @@ export const reOnlyEnOrNum = /^[0-9A-Za-z]+$/g;
 export const reOnlyCn = /^[\u4e00-\u9fa5]+$/g;
 // 正数
 export const rePlusNumber = /^\d+(\.\d+)?$/;
+// Email
+export const reEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 // 地址 的正则
 // v 0.5.0 新增
 export const reUrl = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/;

@@ -4,6 +4,12 @@
 export const rePhone344 = /(\d{3})\d{4}(\d{4})/g;
 // 手机号正则
 export const rePhone = /^1[3456789]\d{9}$/;
+// 区号+座机正则
+export const reLandlineAll = /^(0[0-9]{2,3}\-)([2-9][0-9]{6,7})+(\-[0-9]{1,4})?$/;
+// 座机的区号正则
+export const reLandlineAreaCode = /^(0[0-9]{2,3})?$/;
+// 座机电话正则
+export const reLandlineTel = /^([2-9][0-9]{6,7})+(\-[0-9]{1,4})?$/;
 // 金额格式化正则，匹配: 12,222,222.11
 export const reMoneyPrettify = /\d{1,3}(?=(\d{3})+(\.\d*)?$)/g;
 // 驼峰转字母横线的正则
